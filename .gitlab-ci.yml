@@ -1,0 +1,6 @@
+pages:
+  # Other directives
+  script:
+    # Build the public/ directory first
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|data\|wasm\)$' -exec gzip -f -k {} \;
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|data\|wasm\)$' -exec brotli -f -k {} \;
